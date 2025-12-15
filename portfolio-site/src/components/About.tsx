@@ -1,3 +1,4 @@
+import skills from "@/data/skills";
 export function About() {
   return (
     <section id="about" className="py-12">
@@ -44,20 +45,21 @@ export function About() {
       <div className="mt-6">
         <h3 className="text-lg font-medium">Skills</h3>
         <div className="mt-2 flex flex-wrap gap-2 text-sm">
+          {skills.map((s) => (
+            <span key={s} className="rounded-full border px-2 py-0.5">{s}</span>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-6">
+        <h3 className="text-lg font-medium">Soft Skills</h3>
+        <div className="mt-2 flex flex-wrap gap-2 text-sm">
           {[
-            "GCP (BigQuery, Dataflow, Cloud Storage)",
-            "Data Pipelines (ETL/ELT)",
-            "Python",
-            "SQL",
-            "Microservices",
-            "API Design",
-            "DevOps",
-            "Cloud Security",
-            "AWS",
-            "Azure",
-            "Oracle Cloud",
-            "JavaScript/TypeScript",
-            "React/Next.js",
+            "Problem Solving & Critical Thinking",
+            "Communication & Interpersonal",
+            "Teamwork & Independence",
+            "Detail-Oriented",
+            "Multitasking",
           ].map((s) => (
             <span key={s} className="rounded-full border px-2 py-0.5">{s}</span>
           ))}
