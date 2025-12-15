@@ -6,7 +6,7 @@ export function Footer() {
         <div className="flex gap-4 text-sm">
           <a href="https://github.com/arnold6278" target="_blank" rel="noreferrer" className="hover:underline">GitHub</a>
           <a href="https://www.linkedin.com/in/arnold-mukwevho" target="_blank" rel="noreferrer" className="hover:underline">LinkedIn</a>
-          <a href="/resume.pdf" className="hover:underline">Resume</a>
+          <a href="/resume.pdf" target="_blank" rel="noreferrer" download className="hover:underline">Resume</a>
         </div>
       </div>
     </footer>
