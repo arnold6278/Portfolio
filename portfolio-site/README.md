@@ -1,38 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+**Portfolio Site — Next.js + Tailwind, deployed on Firebase Hosting**
 
-## Getting Started
+Overview
+- Tech stack: Next.js 16 (App Router, RSC), TypeScript, Tailwind CSS 4, ESLint.
+- Hosting: Firebase Hosting (Web Frameworks integration). Live at arnold-portfolio-site.web.app.
+- Structure: `src/app` (routes/layout), `src/components` (UI), `src/data` (skills), `public` (assets), `docs` (architecture & operations).
 
-First, run the development server:
-
+Getting Started
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build & Run
+```bash
+npm run build
+npm run start
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Deployment (Firebase Hosting)
+```bash
+# one-time
+npm i -g firebase-tools
+firebase login
+firebase experiments:enable webframeworks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# from portfolio-site
+firebase deploy
+```
 
-## Learn More
+Architecture
+- App Router: server components by default; page composition in `src/app/page.tsx`.
+- Styling: Tailwind CSS 4 with utility classes; dark-ready base in `src/app/layout.tsx`.
+- Data: Skills and soft skills in `src/data/skills.ts`; certificates link via LinkedIn in `src/components/Certificates.tsx`.
+- Assets: Resume available at `public/resume.pdf`; referenced in footer.
 
-- Architecture overview and stack details: see [docs/TECH-ARCHITECTURE.md](docs/TECH-ARCHITECTURE.md)
+Key Components
+- `Navbar`, `Hero`, `About`, `Projects`, `Certificates`, `Contact`, `Footer` under `src/components`.
+- Home route composes sections in `src/app/page.tsx`.
 
-To learn more about Next.js, take a look at the following resources:
+Docs
+- Stack: `docs/STACK.md`
+- Architecture: `docs/ARCHITECTURE.md`
+- Deployment: `docs/DEPLOYMENT.md`
+- Operations: `docs/OPERATIONS.md`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Maintenance
+- Lint: `npm run lint`
+- Update skills: optional `scripts/extract-skills.mjs` to parse `public/resume.pdf` into `src/data/skills.ts`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Notes
+- This project currently prerenders to static HTML; no `/api` routes.
+- Environment files: `.env.local` supported and ignored by Git.

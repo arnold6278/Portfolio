@@ -1,28 +1,24 @@
-**Recommended Hosting: Vercel (Free Tier)**
+**Firebase Hosting**
 
-Benefits
-- Zero-config for Next.js, fast global CDN, preview deployments per PR.
-- Serverless functions for future `/api/contact`.
+Best when you prefer Firebase tooling, analytics, or plan to add Functions/Firestore later. This repo is compatible with Firebase’s Web Frameworks integration (auto-detects Next.js), and the app currently builds as fully static content.
 
-GitHub Flow
-1. Push the project to a GitHub repo (ensure the repo root is the `portfolio-site` folder or configure root in Vercel).
-2. On vercel.com → New Project → Import GitHub repo.
-3. Framework is auto-detected. If your repo has a parent folder, set “Root Directory” to `portfolio-site`.
-4. Deploy. You’ll get `https://<project>.vercel.app`.
-5. Optional: add a custom domain and connect DNS.
-
-Vercel CLI (alternative)
+Setup
+1. Install CLI and login
 ```bash
-npm i -g vercel
-vercel
-vercel --prod
+npm i -g firebase-tools
+firebase login
+```
+2. Initialize Hosting (detect Next.js)
+```bash
+firebase init hosting
+# Choose: "Use a web framework" → Next.js → select this folder
+```
+3. Deploy
+```bash
+firebase deploy
 ```
 
-Environment Variables (future)
-- Add secrets for email provider (Resend/Nodemailer) in Vercel Project Settings → Environment Variables.
-- Use `process.env.SECRET_NAME` in server code only.
-
-Alternatives
-- Netlify: Good for static-first sites and small serverless needs.
-- Cloudflare Pages: Great performance at the edge; Next.js support via Functions.
-- GitHub Pages: Static-only; not ideal for SSR or API routes.
+Notes
+- Files used: `firebase.json`, `.firebaserc` (CLI will update the project id/site).
+- SSR is supported by the frameworks integration (Cloud Functions/Run). This project currently prerenders to static, so it deploys as static assets.
+- GitHub Actions are configured under `.github/workflows` to build from `portfolio-site` and deploy on PR and merges.
