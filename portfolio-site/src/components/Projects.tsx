@@ -7,28 +7,22 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Query-Works",
-    description: "Python project for efficient data querying workflows.",
-    tags: ["Python"],
-    link: "https://github.com/arnold6278/Query-Works",
+    title: "Health Care Pipeline",
+    description: "Data pipeline solution for healthcare data processing and analytics.",
+    tags: ["Python", "GCP"],
+    link: "https://github.com/arnold6278/health-care-pipeline",
   },
   {
-    title: "Typing Speed Test",
-    description: "JavaScript app to measure typing speed and accuracy.",
-    tags: ["JavaScript"],
-    link: "https://github.com/arnold6278/Typing-speed-test",
+    title: "Secure Auth",
+    description: "Authentication and authorization system with secure best practices.",
+    tags: ["Security", "Auth"],
+    link: "https://github.com/arnold6278/secure-auth",
   },
   {
-    title: "CropWise1",
-    description: "JavaScript project (details in repository).",
-    tags: ["JavaScript"],
-    link: "https://github.com/arnold6278/CropWise1",
-  },
-  {
-    title: "StockWise (fork)",
-    description: "JavaScript project focusing on stock tracking (fork).",
-    tags: ["JavaScript"],
-    link: "https://github.com/arnold6278/StockWise",
+    title: "Task Manager App",
+    description: "Task Manager App: a productivity app for creating and tracking tasks.",
+    tags: ["React", "Productivity"],
+    link: "https://github.com/arnold6278/task-manager-app",
   },
 ];
 
