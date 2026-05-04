@@ -5,7 +5,7 @@ const NAV_ITEMS = [
   { label: 'Experience', href: '#experience' },
   { label: 'Projects',   href: '#projects' },
   { label: 'Skills',     href: '#skills' },
-  { label: 'Contact',    href: '#contact' },
+  { label: 'Contact',    href: '#contact', cta: true },
 ];
 
 export default function Header() {
@@ -36,11 +36,11 @@ export default function Header() {
           </a>
 
           <ul className={`nav-links${open ? ' open' : ''}`}>
-            {NAV_ITEMS.map(({ label, href }) => (
+            {NAV_ITEMS.map(({ label, href, cta }) => (
               <li key={href}>
                 <a
                   href={href}
-                  className={active === href ? 'active' : ''}
+                  className={`${active === href ? 'active' : ''}${cta ? ' nav-cta' : ''}`}
                   onClick={() => setOpen(false)}
                 >
                   {label}

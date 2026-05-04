@@ -1,31 +1,65 @@
 const SKILL_GROUPS = [
   {
     icon: 'fa-terminal',
-    title: 'Programming',
+    title: 'Languages',
     skills: [
-      { name: 'Python', level: 95 },
-      { name: 'SQL',    level: 90 },
-      { name: 'Java',   level: 80 },
+      { name: 'Python',     level: 95 },
+      { name: 'SQL',        level: 92 },
+      { name: 'Java',       level: 78 },
+      { name: 'JavaScript', level: 76 },
     ],
   },
   {
     icon: 'fa-cloud',
-    title: 'Cloud and Data',
+    title: 'Cloud & Infrastructure',
     skills: [
       { name: 'Google Cloud Platform', level: 92 },
-      { name: 'BigQuery and Dataflow',  level: 90 },
-      { name: 'Apache Airflow',         level: 88 },
+      { name: 'Terraform / IAM',        level: 82 },
+      { name: 'Microsoft Azure',        level: 78 },
+    ],
+  },
+  {
+    icon: 'fa-database',
+    title: 'Data Engineering',
+    skills: [
+      { name: 'Apache Airflow',        level: 88 },
+      { name: 'Apache Beam / Dataflow', level: 85 },
+      { name: 'BigQuery / PostgreSQL', level: 91 },
+    ],
+  },
+  {
+    icon: 'fa-chart-bar',
+    title: 'Analysis & BI',
+    skills: [
+      { name: 'Pandas / NumPy',         level: 88 },
+      { name: 'Looker Studio / LookML', level: 84 },
+      { name: 'Power BI',               level: 80 },
+    ],
+  },
+  {
+    icon: 'fa-code',
+    title: 'Software Development',
+    skills: [
+      { name: 'Node.js / Express', level: 78 },
+      { name: 'Firebase',          level: 80 },
+      { name: 'REST APIs',         level: 85 },
     ],
   },
   {
     icon: 'fa-wrench',
-    title: 'Tooling',
+    title: 'DevOps & Tooling',
     skills: [
-      { name: 'Docker and CI/CD',          level: 85 },
-      { name: 'Power BI and Looker',        level: 84 },
-      { name: 'Machine Learning Workflows', level: 82 },
+      { name: 'CI/CD & GitHub Actions',   level: 85 },
+      { name: 'GCP Monitoring & Logging', level: 83 },
+      { name: 'Linux',                    level: 80 },
     ],
   },
+];
+
+const ALSO = [
+  'Seaborn', 'Plotly', 'Matplotlib', 'Tkinter', 'HTML/CSS', 'C++',
+  'Machine Learning', 'LLM Evaluation', 'Data Labelling', 'Industrial Automation',
+  'PLC', 'Mobile Robotics', 'Electronics',
 ];
 
 function Meter({ name, level }) {
@@ -49,7 +83,7 @@ export default function Skills() {
         <div className="section-head reveal">
           <p className="section-kicker">Capabilities</p>
           <h2 className="section-title">
-            Skills and <span>Technology Stack</span>
+            Skills &amp; <span>Technology Stack</span>
           </h2>
         </div>
 
@@ -65,6 +99,13 @@ export default function Skills() {
               ))}
             </article>
           ))}
+        </div>
+
+        <div className="skills-also reveal">
+          <div className="skills-also-label">Also experienced with</div>
+          <div className="skills-tags">
+            {ALSO.map((t) => <span key={t}>{t}</span>)}
+          </div>
         </div>
       </div>
     </section>

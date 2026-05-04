@@ -57,7 +57,7 @@ export default function Contact() {
         <div className="section-head reveal">
           <p className="section-kicker">Contact</p>
           <h2 className="section-title">
-            Let&apos;s build something <span>high-impact.</span>
+            Ready to build something <span>that matters?</span>
           </h2>
         </div>
 
@@ -65,8 +65,8 @@ export default function Contact() {
           {/* Info panel */}
           <aside className="contact-panel reveal">
             <p>
-              Open to freelance engagements, full-time opportunities, and strategic data or cloud
-              collaboration.
+              I respond within 24 hours. Whether it&apos;s a full-time role, a contract
+              engagement, or a collaboration — let&apos;s talk.
             </p>
             <div className="contact-list">
               {CONTACT_ITEMS.map(({ icon, label, href, external }) => (
@@ -93,7 +93,7 @@ export default function Contact() {
               <div style={{ textAlign: 'center', padding: '2rem 0' }}>
                 <i
                   className="fa-solid fa-circle-check"
-                  style={{ fontSize: '2.5rem', color: 'var(--ok)', marginBottom: '0.75rem' }}
+                  style={{ fontSize: '2.5rem', color: 'var(--green)', marginBottom: '0.75rem' }}
                 />
                 <p style={{ fontWeight: 700 }}>Message sent!</p>
                 <p style={{ color: 'var(--muted)', marginTop: '0.4rem', fontSize: '0.9rem' }}>

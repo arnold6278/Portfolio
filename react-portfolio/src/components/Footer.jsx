@@ -5,7 +5,7 @@ export default function Footer() {
     <footer>
       <div className="container footer-row">
         <p>
-          &copy; {year} Arnold Mukwevho &mdash; Cloud &amp; Data Engineer
+          &copy; {year} Arnold Mukwevho &mdash; Software Engineer · Data Engineer · Data Analyst
         </p>
         <div className="socials">
           <a

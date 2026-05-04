@@ -1,25 +1,15 @@
-const SERVICES = [
-  {
-    icon: 'fa-cloud',
-    title: 'Cloud Architecture',
-    desc: 'Secure, cost-aware, and scalable designs for data-centric products on modern cloud stacks.',
-  },
-  {
-    icon: 'fa-database',
-    title: 'Data Pipelines',
-    desc: 'Batch and streaming pipelines for analytics, BI, and ML workloads with robust monitoring.',
-  },
-  {
-    icon: 'fa-chart-line',
-    title: 'Delivery Outcomes',
-    desc: 'From architecture to implementation, I focus on measurable business results and platform reliability.',
-  },
+const STATS = [
+  { value: '99.9%',   label: 'Data availability SLA' },
+  { value: 'GCP Pro', label: 'Data Engineer certified' },
+  { value: '5+',      label: 'Industry certifications' },
 ];
 
-const STATS = [
-  { value: '99.9%',    label: 'Data availability target' },
-  { value: '5+',       label: 'Professional certifications' },
-  { value: 'GCP Pro',  label: 'Data Engineer certified' },
+const STACK_PILLS = ['Python', 'SQL', 'GCP', 'BigQuery', 'Airflow', 'React', 'Terraform'];
+
+const HC_METRICS = [
+  { icon: 'fa-cloud',       label: 'Primary Cloud',    val: 'Google Cloud Platform' },
+  { icon: 'fa-database',    label: 'Data Warehouse',   val: 'BigQuery · PostgreSQL' },
+  { icon: 'fa-code-branch', label: 'Orchestration',    val: 'Apache Airflow · CI/CD' },
 ];
 
 export default function Hero() {
@@ -31,28 +21,28 @@ export default function Hero() {
         <div className="reveal">
           <div className="hero-kicker">
             <i className="fa-solid fa-circle-check" />
-            Cloud and Data Engineering
+            Software · Data · Analytics
           </div>
 
           <h1>
-            Building resilient data systems that{' '}
-            <em>scale&nbsp;with&nbsp;confidence.</em>
+            I turn raw data into<br />
+            <em>decisions that matter.</em>
           </h1>
 
           <p className="hero-lead">
-            I&rsquo;m Arnold Mukwevho — a Cloud and Data Engineer focused on production-grade
-            pipelines, analytics platforms, and high-availability cloud architecture on Google
-            Cloud.
+            Arnold Mukwevho — Software Engineer, Cloud Data Engineer &amp; Data Analyst.
+            I build production-grade pipelines, AI-powered tools, and analytics systems that
+            drive real business outcomes on Google Cloud.
           </p>
 
           <div className="hero-actions">
             <a className="btn btn-primary" href="#projects">
               <i className="fa-solid fa-diagram-project" />
-              View Projects
+              View My Work
             </a>
             <a className="btn btn-outline" href="#contact">
               <i className="fa-solid fa-paper-plane" />
-              Start a Conversation
+              Get In Touch
             </a>
             <a
               className="btn btn-outline"
@@ -74,21 +64,41 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── Right column (services card) ── */}
-        <aside className="banner-card reveal" aria-label="Professional services">
-          <div className="banner-head">
-            <span>Professional Services</span>
-            <span className="status-pill">Accepting new work</span>
+        {/* ── Right column: Tech Profile Card ── */}
+        <aside className="hero-card reveal" aria-label="Tech profile">
+          <div className="hc-head">
+            <div className="hc-avatar">AM</div>
+            <div>
+              <div className="hc-name">Arnold Mukwevho</div>
+              <div className="hc-status">
+                <span className="dot" />
+                Available for hire
+              </div>
+            </div>
           </div>
-          <div className="banner-body">
-            {SERVICES.map(({ icon, title, desc }) => (
-              <article className="service-tile" key={title}>
-                <h3>
+
+          <div className="hc-stats">
+            <div className="hc-stat"><strong>GCP</strong><span>Certified Pro</span></div>
+            <div className="hc-stat"><strong>1yr+</strong><span>Production exp</span></div>
+            <div className="hc-stat"><strong>5+</strong><span>Certifications</span></div>
+          </div>
+
+          <div className="hc-section-label">Core Stack</div>
+          <div className="hc-stack">
+            {STACK_PILLS.map((t) => <span key={t}>{t}</span>)}
+          </div>
+
+          <div className="hc-metrics">
+            {HC_METRICS.map(({ icon, label, val }) => (
+              <div className="hc-metric" key={label}>
+                <div className="hc-metric-icon">
                   <i className={`fa-solid ${icon}`} />
-                  {title}
-                </h3>
-                <p>{desc}</p>
-              </article>
+                </div>
+                <div>
+                  <div className="hc-metric-label">{label}</div>
+                  <div className="hc-metric-val">{val}</div>
+                </div>
+              </div>
             ))}
           </div>
         </aside>
